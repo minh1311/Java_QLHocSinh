@@ -1,0 +1,241 @@
+Java hướng đối tượng:
+1. Tư tưởng cơ bản OOP:
+- phỏng theo qui luật tự nhiên
+- Đóng gói, đa hình, kế thừa, trừu tượng.
+- Ngôn ngữ cài đặt đc 4 tư tưởng này là ngôn ngữ hướng đối tượng.
+- Cấu trúc cơ bản nnhaát OOP là lớp
+-LT OOP => xoay quanh đối tượng(Object):
+	+ Tạo Object như thế nào?
+	+ Tương tác ntn?
+1. Lóp, đối tượng , thể hiện
+
+* Lớp:
+
+- Lớp là Sự mô tả một tập các đối tượng  có chung có thuộc tính và hành vi: biến và method.
+- Lớp dùng để định nghĩa khuôn mẫu cho 1 loại đối tượng.
+- Lớp thực chất là định nghĩa của kiểu dữ liệu.
+- Lớp không được cấp phát bộ nhước và không tồn tại trong bộ nhớ.
+
+
+* Đối tượng:
+
+- Đối tượng: là những thực thể tồn tại trong bộ nhớ và được cấp phát bộ nhớ
+- Đối tượng không phải là lớp ==========>  nhưng được mô tả bởi lớp.
+- Bất kể đối tượng vào cũng thuộc kiểu lớp nào đó.
+- Đối tượng có kiểu lớp nào phải tuân theo kiểu lớp đó;
+- Bộ nhớ cấp phát cho đối tượng phải tuân theo mô tả bơi lớp.
+- Mỗi đối tượng được gọi là 1 thể hiện của 1 lớp (Instance).
+
+* Cấu trúc của lớp: Data, method => class
+Java:
+[Thuộc tính] class <ClassName>
+{
+	//data
+	//method
+}
+
+- [Thuộc tính]: 
+	- Phạm vi: public, [default]
+	- Cập nhật: static, abstract, final.
+
+- Data: biến, hằng, ....
+[Thuộc tính phạm vi] 		[thuộc tính cập nhật] 		<kiểu dữ liệu> <tên biến>[=<giá trị khởi tạo>]
+	public				final				cơ bản
+	protected			static				mảng
+	private				volatitle	    	     đ.n bởi Lớp
+	[default]
+
+* Các kiểu biến: 3 kiểu
++ Biến cục bộ: khai báo trong khối lệnh, phương thức, tham số truyền của phương thức. Tồn tại trong lệnh thi hành.
+		Khi câu lệnh kết thúc giải phóng biến.
+
++ Biến thể hiện( instance): khai báo trong lớp, ngoài mọi phương thức, không static.
+
++ Biến lớp: là biến thể hiện có static. Cho phép tất cả các đối tượng có cùng kiểu lớp chia sẻ static.
+
+- Phương thức:
+[phạm vi] [cập nhật] 			   <kiểu DL trả về>	 <tên>		([tham số truyền])
+{
+	// phần thân
+}
+	public		abstract		cơn bản
+	protected	static			cấu trúc		
+	private		volatitle		void	    	     
+	[default]	final
+			transient
+			natice
+			synchronized
+Tham số truyền: 2 kiểu truyền
+- Trị
+- Tham chiếu(ref): tham số truyền có kiểu cấu trúc: mảng kiểu lớp......
+
+
+* Mô hình bóa lớp và quan hệ giữa các lớp:(Note)
+Liên kế:----------------
+Kết tập: <>-------------
+Cấu thành:  <>-----------: Tô đậm ô: Có tòa nhà mới có lớp học. Có lớp học không có tòa nhà
+
+Kế thừa; <----------: Mũi tên hộp trắng
+
+* Các loại lớp: 
+- Lớp hình thường
+- Lớp trừu tượng
+- Lớp final(vô sinh)
+- Lớp lồng nhau
+- Tất cả lớp Java đều kế thừa trực tiếp hoặc gián tiếp từ lớp Object
+
+2) Phương thức nạp chồng( Overload)
+
+- Trong 1 lớp: cho phép khai báo nhiểu method có cùng tên
+- Các method overload phân biệt bằng tham số truyền:
+	+ Khác nhau số tham số truyền, hoặc
+	+ Khác nhau kiểu dữ liệu hoặc
+	+ cả 2
+--------------------------------------
+- Biến tham chiếu đến đối tượng: biến có kiểu lớp đối tượng, chỉ đến đối tượng
+A m1=null;
+m1= new A();
+A m1=new A();
+----------------------------------------
+- Truy xuất member có: 2 dạng
+- Member non-static:
+		<biến tham chiếu> . <thành viên>
+VD: m1.a=10; m1.b=20; m1.xx();
+
+
+- Thành viên static: truy xuất qua tên lớp
+		< tên lớp> . <static member>
+
+VD: 
+class A{
+	static int a;
+	static void XX()
+	{
+	};
+}
+
+A.a=10;
+A.XX();
+
+3) Phương thức khởi tạo
+	- khởi tạo tự động khi đối tượng đc sinh ra
+	- là method đặc biệt: 	+ tên PT trùng tên lớp
+				+ không có kiểu dữ liệu trả về
+				+ cho phép khai báo overload
+
+	- Nếu trong 1 lớp không khai báo phương thức khởi tạo ==> Trình dịch sử dụng phương thức khởi tạo cài sẵn trong NNLT
+	- Nếu trong 1 lớp có khai báo phương thức khởi tạo    ==> PTKT ko tham số là mặc định
+	- PTKT ko đc kế thừa
+
+4) Kế thừa
+	- Class chỉ có kế thừa đơn không có đa kế thừa( interface có thể đa kế thừa). 
+	- Có tính tái sử dụng lớp Parents.
+	class  <Sub> extends <parClass>
+		{	
+			//
+		}
+EX: class B extend A
+{
+	int c;
+}
+...........................
+B= new B();
+m.a
+m.b
+m.c
+m.xx()
+
+5) Đa hình
+- Thể hiện đa hình thái
+- Khai báo cùng 1 hàm trong cây phả hệ, chạy 2 công việc khác nhau(override)
+
+class A{
+	int a,b;
+	int xx(int ,x int y)
+	{return x+y;}
+}
+
+class B extends A
+{
+	int xx(int x,int y)
+	{
+	return (x*y);
+	}
+}
+
+class c extends B
+{
+	int xx(int x,int y)
+	{
+	return (x/y);
+	}
+}
+-------------------------------------------------------------
+A m1=new A();
+B m2=new B();
+C m3=new C();
+
+m1.xx();
+m1=m2;
+m1.xx();
+m1=m3;
+m1.xx();
+==> Cơ chế liên kế động(liên kế muộn) => Liến kết xảy ra trong khi chương trình đang chạy
+
+Method			nội dung method XX của A
+-------			-------
+|  XX |			|  XX |
+-------			-------
+
+			nội dung method XX của B
+			-------
+			|  XX | 
+			-------
+
+			nội dung method XX của C
+			-------
+			|  XX |
+			-------
+- tên MethodXX được khai báo và nội dung nó khác nhau
+
+
+===> khi gọi XX sẽ kiểm xem đối tượng đang scope nào thì kết nối với nội dung của XX của đối tượng tương ứng.
+
+6) Lớp trừu tượng và giao diện
+a) Lớp trừ tượng và phương thức trừu tượng
+b) Giao diện (Interface)
+
+7) Đóng gói trong JAva
+- thể hiện khả năng che dấu dữ liệu
+- Phạm vi: 	public	, 	protected	, 	private	,	[default](truy cậpp được khi cung package)
+
+- Cập nhật: static, abstract, final , native, volatile, transient, synchromized
+
+abstract	, 	final:
+
+- biến =>hằng
+- method: có overload, không override
+- Lớp vô sinh  => không có kế thừa
+
+static:
+- Cho phép truy xuất qua tên của lớp
+- Trong 1 lớp, 1 phương thức static chỉ cho phép truy xuất static trong đó
+- không override
+- Không cho phép dùng thí, super
+- Trong 1 lớp có biến static, khối lệnh static, nó thực hiện biến và khối lệnh static trước rồi mới đến method.
+- biến static là biến lớp cho phép liên thông đối tượng cùng 1 lớp
+
+
+
+- Để khai báo method ghi đè, method ghi đè có phạm vi rộng >= phạm vi method bị ghi đè.
+- Không thể ghi đè method pa, static
+
+
+
+
+
+
+
+
+
+

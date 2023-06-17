@@ -1,0 +1,10 @@
+Ngoại lệ: Exception
+try: 
+catch: 
+finally: phải thực hiên( tương tự try... cath... else...)
+throw:tạo ra exception:        throw new Exception();
+throws: xử lý exception ở ngoài lớp
+
+I/O:
+- trực tiếp: File, Network, 
+- gián tiếp:

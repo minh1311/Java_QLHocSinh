@@ -1,0 +1,111 @@
+1.Qui tắc:
+
+- Phân biệt chữ hoa thường.
+- Bắt đầu: 1 chữ, _ , $ , số
+
+2. String không phải kiểu dữ liệu nguyên thủy
+
+3. Biến:
+- Biến là ô nhớ: Address, value.
+
+3 loại biến:
+- Local
+- Instance, đối tượng.
+- Global(biến lớp): có static
+
+- Hằng ký tự: \n, \t,\a, \\, \
+
+- Khi báo tên hằng:
+ C/C++: const
+Java: final
+
+-Mảng:
+- Mảng 1 chiều: tach khai bao va cap phat bộ nhớ
+ int a[]
+ int[] a;
+ a=new int[100]
+
+
+-MẢng 2 chiều:
+	int[][] a;
+	a= new int [3][4]
+
+-Mảng jagged:
+x	x	x	x
+x	x	x
+x
+
+int [][]  a;
+a=new int [3][];
+a[0]=new int [4];
+a[1]=new int [3];
+a[2]=new int [1];
+
+4. Các phép toán
+ &&, ||, !
+
+- Logic mức bit: 
+~: bổ sung đơn phân
+&: and
+|:or
+<<: dich trái
+>>: dich phải copy lại bit trái cùng: không đổi dấu của số
+>>>:dich phải bit trái cùng=0
+^ (XOR)
+
+- Cộng chuỗi: "ab" + "cd"= "abcd"
+
+5. Nhập xuất thiết bị chuẩn:
+- Xuất:
+System.out.print("");
+
+System.out.println("");
+
+
+- Nhâp:
+
+impỏt java.util.Scanner;
+
+---
+
+
+
+
+Scanner sc=new Scanner(System.in);
+sc.nextXXX();
+String sc.nextLine();
+nextByte();
+
+C2: Lopws BufferedReader
+import java.io.*;
+
+.......
+try
+{
+BufferedReader key=new BufferedReader(new InputStreamReader(System.in));
+char c=(char)key.read();
+String s=key.readLine();
+....
+}
+catch()
+{
+
+}
+
+7. Chuyển kiểu dữ liệu
+int a=Integer.parseInt("123");
+8. Chú thích
+//
+/*   */
+/**   */
+
+
+
+String s;
+s=s.valueof(123)
+
+TIểu luận 1: Nghiên cứu tóm tắt: Javapoint.com ,Java Tutỏial, Control Statement.
+-Gạch đầu dòng cái đã đọc
+- Nghiên cứu các ví dụ: Chạy các chưuogn trình ví dụ,giải thích các lệnh trong các chương trình ví dụ(comment)
+ 
+- Code bài tập trên:
